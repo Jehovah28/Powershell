@@ -9,10 +9,7 @@ param (
 [ValidateSet(1,2)]
 $VMGeneration= 2,
 
-[parameter(Mandatory)]
-# uint ist für eine Gen 2 VM erforderlich
-# für die Verwendung als Parameter ist die Angabe optional
-[uint64]$VMMemory=1GB
+$VMMemory=1GB
 )
 
 $VMLocation = 'D:\VMs'
