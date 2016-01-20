@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<helpItems xmlns="http://msh" schema="maml">
+	<!--
+		 Module: 		Office365
+		 Version:		0.0
+	-->
+	<!-- All Commands-->
+	<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+		<!-- Command-->
+		<command:details>
+			<command:name>New-Office365User</command:name>
+			<maml:description>
+				<maml:para>Erstellt einen neuen Benutzer in Office 365</maml:para>
+			</maml:description>
+			<maml:copyright>
+				<maml:para/>
+			</maml:copyright>
+			<command:verb>New</command:verb>
+			<command:noun>Office365User</command:noun>
+			<dev:version/>
+		</command:details>
+		<maml:description>
+			<maml:para>Diese Funktion erstellt einen neuen Benutzer in AzureAD und weist ihm eine Lizenz für Office 365 zu. Es wird
+eine entsprechende Emailadresse erstellt und der Benutzer wird der Verteilergruppe Outlook in Exchange Online
+hinzugefügt.
+Die für dieses Funktion benötigte CSV-Datei muss KOMMA-Getrennt sein und benötigt in der ersten Zeile die
+Werte Pasword,UserPrincipalName,Displayname.
+
+Es werden der Microsoft Online Services Sign-in Assistent und das Powershell-Module für Azure Active Directory benötigt.
+
+Microsoft Online Services Sign-in Assistant:
+http://go.microsoft.com/fwlink/p/?LinkId=286152
+
+Powershell-Module für Azure AD:
+http://go.microsoft.com/fwlink/p/?linkid=236297</maml:para>
+		</maml:description>
+		<command:syntax>
+			<!-- Parameter Sets-->
+			<command:syntaxItem>
+				<maml:name>New-Office365User</maml:name>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="">
+					<maml:name>CSVDatei</maml:name>
+					<maml:description>
+						<maml:para>Komma getrennte CSV-Datei. Muss die Werte Password, UserPrincipalName und Displayname als Spaltenkopf enthalten.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+					<dev:defaultValue>
+					</dev:defaultValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="">
+					<maml:name>EMailadresse</maml:name>
+					<maml:description>
+						<maml:para>Muss eine gültige Emailadresse im AD sein.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+					<dev:defaultValue>
+					</dev:defaultValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="2" aliases="">
+					<maml:name>Office365Admin</maml:name>
+					<maml:description>
+						<maml:para>Account eines gloablen Administrators in Office 365.</maml:para>
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+					<dev:defaultValue>
+					</dev:defaultValue>
+				</command:parameter>
+			</command:syntaxItem>
+		</command:syntax>
+		<command:parameters>
+			<!-- All Parameters-->
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="True (ByValue)" position="0" aliases="">
+				<maml:name>CSVDatei</maml:name>
+				<maml:description>
+					<maml:para>Komma getrennte CSV-Datei. Muss die Werte Password, UserPrincipalName und Displayname als Spaltenkopf enthalten.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Object</command:parameterValue>
+				<dev:type>
+					<maml:name>Object</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue>
+				</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="">
+				<maml:name>EMailadresse</maml:name>
+				<maml:description>
+					<maml:para>Muss eine gültige Emailadresse im AD sein.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+				<dev:type>
+					<maml:name>String</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue>
+				</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="2" aliases="">
+				<maml:name>Office365Admin</maml:name>
+				<maml:description>
+					<maml:para>Account eines gloablen Administrators in Office 365.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+				<dev:type>
+					<maml:name>String</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<dev:defaultValue>
+				</dev:defaultValue>
+			</command:parameter>
+		</command:parameters>
+		<command:inputTypes>
+			<!-- Inputs-->
+			<command:inputType>
+				<dev:type>
+					<maml:name>System.Object
+					</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<maml:description>
+					<maml:para/>
+				</maml:description>
+			</command:inputType>
+		</command:inputTypes>
+		<command:returnValues>
+			<!-- Outputs-->
+			<command:returnValue>
+				<dev:type>
+					<maml:name>System.Object</maml:name>
+					<maml:uri/>
+				</dev:type>
+				<maml:description>
+					<maml:para/>
+				</maml:description>
+			</command:returnValue>
+		</command:returnValues>
+		<maml:alertSet>
+			<!-- Notes-->
+			<maml:alert>
+				<maml:para>Fehlerbehandlung muss noch verbessert werden.
+Bei einem Fehler muss derzeit noch das Transkript von Hand gestoppt werden oder durch schlieÃŸen der aktuellen Powershell-Session.
+				</maml:para>
+			</maml:alert>
+		</maml:alertSet>
+		<command:examples>
+			<!-- Examples-->
+			<command:example>
+				<maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+				<maml:introduction>
+					<maml:para>PS C:\&gt;</maml:para>
+				</maml:introduction>
+				<dev:code>New-Office365KursUser -CSVDatei .\User.csv -Emailadresse &apos;Darth.Vader@something.com&apos; -Office365Admin &apos;admin@something.com&apos;</dev:code>
+				<dev:remarks>
+					<maml:para>In diesem Beispiel enthält die Datei User.csv alle benötigten Daten und wird dem Parameter CSVDatei übergeben. 
+Die Emailadresse wird dazu benötigt um eine automatisch generierte Email an die Person zu schicken die die Accounts angefordert hat.
+Das Office365-Konto muss derzeit noch ein globaler Administrator sein.</maml:para>
+				</dev:remarks>
+			</command:example>
+		</command:examples>
+	</command:command>
+</helpItems>
