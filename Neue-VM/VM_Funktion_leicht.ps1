@@ -26,6 +26,7 @@ if ($VMMemory -ne $null)
     }
 else 
     {
+    # mit Default Arbeitsspeicher
     New-VM -Name $VMName -Generation $VMGeneration -SwitchName $VMNetwork -Path $VMLocation -NoVHD -Verbose
     New-VHD -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx" -SizeBytes $VMDiskSize -Verbose
     Add-VMHardDiskDrive -VMName $VMName -Path "$VMLocation\$VMName\Virtual Hard Disks\$VMName-Disk1.vhdx" -Verbose
