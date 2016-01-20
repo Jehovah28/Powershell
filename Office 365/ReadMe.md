@@ -1,4 +1,4 @@
-Create new users in Office 365 from an comma separted csv file and assign a license to them.
+Create new users in Office 365 from an comma seperated csv file and assign a license to them.
 The function also adds the users to a predefined Distribution group in Exchange Online and set the default public folder and addressbookpolicy.
 Note: You have to change them to fit your needs
 
@@ -11,6 +11,8 @@ The script "Voraussetzung" validate that the Microsoft Online Services Sign-in A
 Note: Currently only on german systems, but it is easy to change for other languages
 
 And it tries to import the module MSOnline. If it fails your not able to run the function.
+
+German help is include in the XML-file in the subfolder de-DE
 
 TODO:
 improve error handling
