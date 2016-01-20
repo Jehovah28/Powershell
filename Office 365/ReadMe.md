@@ -11,3 +11,7 @@ The script "Voraussetzung" validate that the Microsoft Online Services Sign-in A
 Note: Currently only on german systems, but it is easy to change for other languages
 
 And it tries to import the module MSOnline. If it fails your not able to run the function.
+
+TODO:
+improve error handling
+handle what happens when an user exist in Office 365
